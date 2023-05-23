@@ -31,7 +31,7 @@ inner join tbl_editoras AS E
 ON L.ID_Editora = E.ID_Editora
 where E.Nome_Editora like 'M%';
 
--- Consultando três tabelas de só vez
+-- Consultando três tabelas de uma só vez
 select L.Nome_Livro AS Livro, A.Nome_autor
 AS Autor, E.Nome_Editora AS Editora
 from tbl_livro AS L 
