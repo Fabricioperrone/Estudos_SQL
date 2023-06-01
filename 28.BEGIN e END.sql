@@ -19,7 +19,6 @@ begin
 	return preco + preco * taxa /100;
 end$$
 DELIMITER ;
--- Invocando Função
 
 select aumenta_Preco(50.00, 10.00);
 ---------------------------------------------------------------------
