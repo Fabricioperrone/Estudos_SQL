@@ -19,6 +19,7 @@ begin
 	return preco + preco * taxa /100;
 end$$
 DELIMITER ;
+-- Invocando Procedimento
 
 select aumenta_Preco(50.00, 10.00);
 ---------------------------------------------------------------------
