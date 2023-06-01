@@ -15,12 +15,14 @@
 -- Criando função
 DELIMITER $$
 create function aumenta_Preco (preco DECIMAL(10,2), taxa DECIMAL(10,2))
+returns varchar(5)
 begin
 	return preco + preco * taxa /100;
 end$$
 DELIMITER ;
+DROP function aumenta_Preço;
 
-select aumenta_Preco(50.00, 10.00);
+select aumenta_Preco(50.00, 10.00) AS Resultado;
 ---------------------------------------------------------------------
 -- Criar Procedimento 
 DELIMITER //
