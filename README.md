@@ -21,11 +21,13 @@ https://youtube.com/playlist?list=PLucm8g_ezqNrWAQH2B_0AnrFY5dJcgOLR
 ------------------------------------------------------------------------------------
 
 ## Parâmetro IN  
+
 É o modo padrão. Quando você define um parâmetro IN em um SP, o programa
 chamador de passar um argumento ao procedimento armazenado. 
 Essa passagem de parâmetros é do tipo passagem por valor, portanto 
 o valor do parâmetro fora o procedimento armazenado permanece inalterado.
 São semelhantes ao parâmetros de função.
+
 ------------------------------------------------------------------------------------
 
 ## Parâmetro OUT 
@@ -37,7 +39,9 @@ São semelhantes ao parâmetros de função.
  com uma diferença significativa: no parâmetro OUT, o valor do
  parâmetro, portanto o valor da variável cujo valor é passado como parâmetro, 
  é ajustado para NULL no início da execução do procedimento.
+ 
 ---------------------------------------------------------------------------------------
+
 ## Parâmetro INOUT
  Trata-se de uma combinação dos parâmetros IN e OUT. Isso significa que o programa chamador deve passar  o argumento e o procedimento armazenado pode modificar
  o parâmetro INOUT e repassar o novo valor de volta ao  programa chamador. 
