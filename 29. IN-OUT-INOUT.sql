@@ -54,4 +54,3 @@ CALL editora_livro('Wiley');
 
 SET @minhaeditora = 'Wiley';
 CALL editora_livro(@minhaeditora);
-  
