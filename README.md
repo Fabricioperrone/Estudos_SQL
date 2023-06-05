@@ -47,4 +47,27 @@ São semelhantes ao parâmetros de função.
  o parâmetro INOUT e repassar o novo valor de volta ao  programa chamador. 
  Portanto, uma referência à variável externa é passada ao procedimento. 
  
+ ## Sintaxe:
+ ```
+ MODO nome_param tipo_param(tamanho_param)
+ ```
+ O modo pode ser IN, OUT ou INOUT, dependendo do propósito do procedimento armazenado.
  
+### Exemplo 01:
+```
+DELIMITER //
+CREATE PROCEDURE editora_livro (IN editora VARCHAR(50))
+BEGIN
+   SELECT L.Nome_Livro, E.Nome_Editora
+   FROM tbl_Livro AS L
+   INNER JOIN tbl_editoras AS E
+   ON L.ID_Editora = E.ID_Editora
+   WHERE E.Nome_Editora;
+END//
+DELIMITER ; 
+
+CALL editora_livro('Wiley');
+
+SET @minhaeditora = 'Wiley';
+CALL editora_livro(@minhaeditora);
+  
