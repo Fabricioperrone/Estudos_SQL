@@ -54,3 +54,65 @@ CALL editora_livro('Wiley');
 
 SET @minhaeditora = 'Wiley';
 CALL editora_livro(@minhaeditora);
+
+-------------------------------------------------------------- 
+-- Exemplo 2:
+DELIMITER //
+CREATE PROCEDURE aumenta_preco(IN codigo INT, taxa DECIMAL(10.9))
+BEGIN
+	UPDATE tbl_Livro
+    SET Preco_Livro  = tbl_Livro.Preco_Livro + tbl_Livro.Preco_Livro * taxa / 100
+    WHERE ID_Livro = codigo;
+    END//
+    DELIMITER ;
+    
+    -- Testando: vamos aumentar o preço do livro id 4 em 20%
+    -- Primeiro verificamos o preço atual
+    SELECT * FROM tbl_Livro
+    WHERE ID_Livro = 4;
+    
+    -- Aplicamos agora o procedimento de aumento:
+    SET @livro = 4;
+    SET @aumento = 20; -- aumento de 20%
+    CALL aumenta_preco(@livro, @aumento);
+    
+-- Verifica o aumento aplicado
+    SELECT * FROM tbl_Livro
+    WHERE ID_Livro = 4;
+    
+-- Deleta procedimento
+drop procedure aumenta_preco;
+-----------------------------------------------------------------------------
+-- Exemplo parâmetro OUT
+DELIMITER //
+CREATE PROCEDURE teste_out(IN id INT, OUT livro VARCHAR(50))
+BEGIN
+	SELECT Nome_Livro
+    INTO livro
+    FROM tbl_Livro
+    WHERE ID_Livro = id;
+END//
+DELIMITER ;
+
+CALL teste_out(3, @livro);
+
+-- Parâmetro INOUT
+-- No exemplo a seguir, o valor da variável  que for passado
+-- ao parâmetro  "valor" será refletido na própria variável
+-- externa, a qual terá seu valor alterado também
+DELIMITER //
+CREATE PROCEDURE aumento (INOUT valor DECIMAL(10.2), taxa DECIMAL(10.2))
+BEGIN
+	SET valor = valor + valor * taxa / 100;
+END//
+DELIMITER ;
+
+-- Testando: criamos a variável  valorinicial, e a usamos
+-- para passar o parâmetro valor. Vamos aumentar  o valor em 15%
+
+SET @valorInicial = 20.00;
+SELECT @valorInicial;
+
+CALL aumento(@valorInicial, 15.00);
+-- Verificamos agora se a variável  externa  @valorinicial foi alterada:
+SELECT @valorInicial;
