@@ -70,4 +70,30 @@ CALL editora_livro('Wiley');
 
 SET @minhaeditora = 'Wiley';
 CALL editora_livro(@minhaeditora);
-  
+```
+# Comandos básicos e avançados para análise de dados em SQL
+
+## Básicos
+- SELECT FROM
+Seleciona os dados de uma tabela.
+- ORDER BY
+Ordena/Classifica os dados de uma tabela.
+- WHERE(AND, OR, IN, BETWEEN, LIKE)
+Filtra os dados de uma tabela.
+- FUNÇÕES DE AGREGAÇÃO (COUNT, SUM, AVG, MIN, MAX)
+Realiza cálculos de contagem, soma, média, mínimo, máximo.
+- GROUP BY
+Agrupa os dados de uma tabela
+- HAVING
+Filtra dados de uma tabela agrupada.
+
+## Avançados
+- SUBQUERIES (WHERE/HAVING/FROM/SELECT)
+Permite trabalhar com consultas dentro de consultas.
+- JOINS
+Permite relacionar tabelas de um banco de dados.
+- CASE
+Permite trabalhar com funções condicionais. 
+- FUNÇÕES DE JANELAS (ACUMULADO, PERCENTUAL DO TOTAL, YOY/MOM)
+Funções de análises de dados no _SQL_.
+
