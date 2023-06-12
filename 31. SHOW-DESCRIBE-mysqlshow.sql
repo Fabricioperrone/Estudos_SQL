@@ -43,18 +43,20 @@ DESCRIBE tbl_livro;
 -- Ou
 DESC tbl_livro;
 
--- mysqlshow
--- Terminal Ubuntu
--- Infos sobre mysqlshow comando -> man mysqlshow
--- Exibe todos os BDs
--- mysqlshow -u root -p
--- exibe tabelas de um banco de dados  mysqlshow -u root -p db_biblioteca
--- exibe campos da tabela,  mysqlshow -u root -p db_biblioteca tbl_autores %
--- Visualizar as tabelas contando as colunas e linha
--- mysqlshow -vv -u root -p db_biblioteca 't*'
--- vv: Traga a contagem de colunas e linhas. 
--- Primeiro V: é o número de colunas
--- Segundo V: é o número de linhas
--- espressão regular 't*': tragam todas a infos sobre as tabelas que comecem com a letra 'T'
--- Trazendo consulta de uma específica coluna
--- mysqlshow -u root -p db_Bibiloteca tbl_autores ID_Autor
+- mysqlshow
+-Terminal Ubuntu
+- Infos sobre mysqlshow comando -> man mysqlshow
+- Exibe todos os BDs
+- mysqlshow -u root -p
+- exibe tabelas de um banco de dados  mysqlshow -u root -p db_biblioteca
+- exibe campos da tabela,  mysqlshow -u root -p db_biblioteca tbl_autores %
+- Visualizar as tabelas contando as colunas e linha
+- mysqlshow -vv -u root -p db_biblioteca 't*'
+- vv: Traga a contagem de colunas e linhas. 
+- Primeiro V: é o número de colunas
+- Segundo V: é o número de linhas
+- espressão regular 't*': tragam todas a infos sobre as tabelas que comecem com a letra 'T'
+
+### Resultado
+
+![ESTUDOS_SQL](.)
